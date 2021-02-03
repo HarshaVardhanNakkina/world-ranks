@@ -1,0 +1,128 @@
+.overviewPanel,
+.detail_panel {
+	padding: 1.25rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--box-shadow);
+	background-color: var(--background-color-light);
+}
+
+.overviewPanel img {
+	width: 100%;
+	border-radius: 0.25rem;
+}
+
+.overviewName {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 0;
+}
+
+.overviewRegion {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 300;
+	margin-top: 0.5rem;
+	margin-bottom: 24px;
+}
+
+.overviewNumbers {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+.overviewValue {
+	font-size: 1rem;
+	font-weight: 500;
+}
+.overviewLabel {
+	color: var(--text-secondary);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.detail_panel {
+	padding: 0;
+}
+.detail_heading {
+	font-size: 18px;
+	font-weight: 500;
+	padding: 1.25rem;
+	margin: 0;
+}
+
+.detail_row {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 1.25rem;
+
+	border-bottom: 1px solid var(--text-secondary);
+
+	flex: 1;
+}
+
+.detail_label {
+	color: var(--text-secondary);
+	font-weight: 500;
+}
+
+.detail_value {
+	font-weight: 500;
+	word-wrap: break-word;
+}
+
+.borders_panel {
+	padding: 1.25rem;
+}
+
+.border_panel_label {
+	color: var(--text-secondary);
+	margin-bottom: 1.25rem;
+}
+
+.borders_wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-gap: 1.5rem;
+}
+
+.border_country {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.border_country img {
+	width: 100%;
+	border-radius: 0.5rem;
+	border: 1px var(--text-secondary) solid;
+}
+
+.border_country_name {
+	margin-top: 0.5rem;
+	text-align: center;
+}
+
+.overview_container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 1.5rem;
+}
+@media only screen and (min-width: 720px) {
+	.overview_container {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 1.5rem;
+	}
+
+	.overview_left {
+		grid-column: 1 / span 4;
+	}
+
+	.overview_right {
+		grid-column: 5 / span 8;
+	}
+}
