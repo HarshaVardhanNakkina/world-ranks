@@ -2,7 +2,7 @@
 
 :root {
 	--text-color: #124a63;
-	--text-secondary: #b3c5cd;
+	--text-secondary: #30424a;
 	--primary-color: #21b6b7;
 
 	--background-color: #f9f9f9;
@@ -15,7 +15,7 @@
 
 [data-theme='dark'] {
 	--text-color: #f0f0f0;
-	--text-secondary: #b3c5cd;
+	--text-secondary: #30424;
 	--primary-color: #21b6b7;
 
 	--background-color: #252329;

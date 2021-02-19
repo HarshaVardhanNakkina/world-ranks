@@ -20,4 +20,5 @@
 
 .input::placeholder {
 	color: var(--text-secondary);
+	opacity: 0.7;
 }

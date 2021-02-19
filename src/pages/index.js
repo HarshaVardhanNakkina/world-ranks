@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useState } from 'react'
 
 // Components
@@ -26,7 +25,11 @@ export default function Home({ countries }) {
 			<div className={styles.input_container}>
 				<div className={styles.count}>Found {countries.length} countries</div>
 				<div className={styles.search_input}>
-					<SearchInput placeholder='Filter by Name, Region, or SubRegion' onChange={onInputChange} />
+					<SearchInput
+						placeholder='Filter by Name, Region, or SubRegion'
+						onChange={onInputChange}
+						aria-label='Filter by Name, Region, or SubRegion'
+					/>
 				</div>
 			</div>
 			<CountriesTable countries={filteredCountries} />

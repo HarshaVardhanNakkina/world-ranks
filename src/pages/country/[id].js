@@ -26,7 +26,7 @@ const Country = ({ country }) => {
 			<div className={styles.overview_container}>
 				<div className={styles.overview_left}>
 					<div className={styles.overviewPanel}>
-						<img src={country.flag} alt={country.name} />
+						<img src={country.flag} alt={country.name} width='100%' loading='lazy' />
 						<h1 className={styles.overviewName}>{country.name}</h1>
 						<div className={styles.overviewRegion}>{country.region}</div>
 						<div className={styles.overviewNumbers}>
@@ -74,7 +74,7 @@ const Country = ({ country }) => {
 							<div className={styles.borders_wrapper}>
 								{borders.map(({ name, flag }) => (
 									<div className={styles.border_country} key={name}>
-										<img src={flag} alt={name} />
+										<img src={flag} alt={name} width='100%' loading='lazy' />
 										<div className={styles.border_country_name}>{name}</div>
 									</div>
 								))}

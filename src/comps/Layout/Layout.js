@@ -8,6 +8,7 @@ import Logo from './Logo'
 import styles from './Layout.module.css'
 import { MdBrightnessHigh, MdBrightnessMedium } from 'react-icons/md'
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 
 export default function Layout({ children, title = 'World Ranks' }) {
 	const [theme, setTheme] = useState('light')
@@ -23,17 +24,23 @@ export default function Layout({ children, title = 'World Ranks' }) {
 	}
 	return (
 		<div className={styles.container}>
-			<Head>
-				<title>{title}</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
+			<Helmet
+				title={title}
+				link={[
+					{
+						rel: 'icon',
+						herf: '/favicon.ico'
+					}
+				]}
+				meta={[{ property: 'og:title', content: title }]}
+			/>
 			<header className={styles.header}>
 				<Link href='/'>
 					<div className={styles.logo}>
 						<Logo />
 					</div>
 				</Link>
-				<button className={styles.theme_switcher} onClick={switchTheme}>
+				<button className={styles.theme_switcher} onClick={switchTheme} aria-label='Theme Switcher'>
 					{theme === 'dark' ? <MdBrightnessHigh /> : <MdBrightnessMedium />}
 				</button>
 			</header>
