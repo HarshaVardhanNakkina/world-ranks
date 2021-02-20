@@ -15,12 +15,12 @@
 
 [data-theme='dark'] {
 	--text-color: #f0f0f0;
-	--text-secondary: #30424;
+	--text-secondary: #e0e0e0;
 	--primary-color: #21b6b7;
 
 	--background-color: #252329;
-	--background-color-dark: #3c393f;
-	--background-color-light: #120f13;
+	--background-color-light: #3c393f;
+	--background-color-dark: #120f13;
 }
 
 html,

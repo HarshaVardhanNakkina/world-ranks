@@ -1,43 +1,12 @@
 import { useState } from 'react'
-
 import Link from 'next/link'
 
-import { MdArrowDownward, MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+// COMPONENTS
+import Country from './Country'
+import ArrowIcon from './ArrowIcon'
 
 // Styles
 import styles from './CountriesTable.module.css'
-
-function Country({ country }) {
-	return (
-		<Link href={`/country/${country.alpha3Code}`}>
-			<div className={styles.row}>
-				<div className={styles.flag}>
-					<img src={country.flag} alt={country.name} width='100%' loading='lazy' />
-				</div>
-				<div className={styles.name}>{country.name}</div>
-				<div className={styles.population}>{country.population}</div>
-				<div className={styles.area}>{country.area}</div>
-				<div className={styles.gini}>{country.gini}%</div>
-			</div>
-		</Link>
-	)
-}
-
-function ArrowIcon({ direction = 'asc' }) {
-	if (direction === 'dsc') {
-		return (
-			<div className={styles.heading_arrow}>
-				<MdKeyboardArrowDown color='inherit' />
-			</div>
-		)
-	} else {
-		return (
-			<div className={styles.heading_arrow}>
-				<MdKeyboardArrowUp color='inherit' />
-			</div>
-		)
-	}
-}
 
 function orderBy(countries, key, dir = 'asc') {
 	const Direction = {
@@ -58,13 +27,12 @@ export default function CountriesTable({ countries }) {
 	const switchDirection = () => {
 		setDirection(direction === 'asc' ? 'dsc' : 'asc')
 	}
-
 	const setDirectionAndValue = value => {
 		switchDirection()
 		setValue(value)
 	}
-
 	const orderedCountries = orderBy(countries, value, direction)
+
 	return (
 		<div>
 			<div className={styles.heading}>

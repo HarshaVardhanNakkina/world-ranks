@@ -1,5 +1,7 @@
-// Compoenents
 import { useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
+
+// COMPONENTS
 import Layout from '../../comps/Layout/Layout'
 
 // Styles
@@ -26,7 +28,9 @@ const Country = ({ country }) => {
 			<div className={styles.overview_container}>
 				<div className={styles.overview_left}>
 					<div className={styles.overviewPanel}>
-						<img src={country.flag} alt={country.name} width='100%' loading='lazy' />
+						<LazyLoad height='auto'>
+							<img src={country.flag} alt={country.name} width='100%' height='auto' loading='lazy' />
+						</LazyLoad>
 						<h1 className={styles.overviewName}>{country.name}</h1>
 						<div className={styles.overviewRegion}>{country.region}</div>
 						<div className={styles.overviewNumbers}>
@@ -44,7 +48,7 @@ const Country = ({ country }) => {
 				</div>
 				<div className={styles.overview_right}>
 					<div className={styles.detail_panel}>
-						<h4 className={styles.detail_heading}>Details</h4>
+						<h2 className={styles.detail_heading}>Details</h2>
 						<div className={styles.detail_row}>
 							<div className={styles.detail_label}>Capital</div>
 							<div>{country.capital}</div>
@@ -74,7 +78,9 @@ const Country = ({ country }) => {
 							<div className={styles.borders_wrapper}>
 								{borders.map(({ name, flag }) => (
 									<div className={styles.border_country} key={name}>
-										<img src={flag} alt={name} width='100%' loading='lazy' />
+										<LazyLoad height='auto' resize once>
+											<img src={flag} alt={name} width='100%' height='auto' loading='lazy' />
+										</LazyLoad>
 										<div className={styles.border_country_name}>{name}</div>
 									</div>
 								))}

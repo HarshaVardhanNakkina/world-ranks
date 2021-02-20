@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }) {
 						name: 'viewport',
 						content: 'width=device-width, initial-scale=1'
 					},
-					{ property: 'og:title', content: 'World Ranks' }
+					{ property: 'og:title', content: 'World Ranks' },
+					{ property: 'keywords', content: 'World Ranks, Reactjs' }
 				]}
 			/>
 			<Component {...pageProps} />
